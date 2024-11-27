@@ -1,0 +1,251 @@
+*{
+  margin: auto;
+  padding: auto;
+  box-sizing: border-box;
+}
+.row{
+  display: flex;
+  flex-direction: column;
+}
+
+
+body{
+  background: var(--bgColor);
+  font-family: sans-serif;
+  --color: rgb(73, 67, 67);
+  --offColor: rgb(142, 189, 214);
+}
+ 
+ :root {
+  --primary-color: #3498db;
+  --bgColor: linear-gradient(to bottom, lightblue, rgb(242, 239, 239));
+  --shadowColor: rgba(0, 0, 0, 0.12);
+  --color: rgb(247, 245, 245);
+  --redColor: rgb(206, 29, 29);
+  --whiteash: rgb(167, 162, 157);
+}
+
+/* DARK MODE START HERE */
+.darkMode {
+  --shadowColor: rgba(255, 255, 255, 0.24);
+  --primary-color: white;
+  --bgColor: rgb(7, 37, 53);
+  --color: rgb(250, 245, 245);
+  --offColor: rgb(7, 37, 53);
+}
+
+/* Dark Mode Toggle Button */
+.darkModeBtn {
+  font-size: 14px;
+  width: 38px;
+  height: 38px;
+  display: inline-block;
+  cursor: pointer;
+  border-radius: 10px;
+  position: relative;
+  overflow: hidden; 
+}
+
+.darkModeBtn:hover {
+  transform: scale(1.1);
+  transition: transform 0.3s ease;
+}
+
+.darkModeBtn span {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  line-height: 38px;
+  text-align: center;
+  transition: all 0.3s ease;
+}
+
+.darkModeBtn span.darkText {
+  color: var(--redColor);
+  background-color: burlywood;
+  opacity: 1;
+  visibility: visible;
+  z-index: 1;
+}
+
+.darkModeBtn span.lightText {
+  color: var(--redColor);
+  background-color: var(--whiteash);
+  opacity: 0;
+  visibility: hidden;
+  z-index: 0;
+}
+
+.darkMode .darkModeBtn span.darkText {
+  opacity: 0;
+  visibility: hidden;
+  z-index: 0;
+}
+
+.darkMode .darkModeBtn span.lightText {
+  opacity: 1;
+  visibility: visible;
+  z-index: 1;
+} 
+
+/* DARK MODE ENDS HERE */
+/* OFFCANVAS STARTS HERE */
+.btn-primary {
+  color: #f7f4f4;
+  background-color: transparent;
+  border-color: transparent;
+  font-size: 25px;
+  &:hover{
+    background-color: transparent;
+    border-color: transparent;
+    color: aqua;
+  }
+}
+.offcanvas{
+  background-color: var(--offColor);
+  /* width: 80%; */
+}
+.btn-close{
+  position: absolute;
+ left: 10px;
+ background-color: transparent;
+ border: none;
+ font-size: 18px;
+ font-weight: 700;
+ &:hover{
+  transform: scale(1.1);
+  color: red;
+}
+}
+.navigation  .nav-link{
+  text-align: center;
+  margin-top: 15px;
+  color: rgb(198, 146, 81);
+  margin: auto;
+}
+.offcanvas-body
+ .nav-link{
+  text-align: center;
+  margin-top: 15px;
+  color: bisque;
+}
+.navigation,
+.offcanvas-body
+.nav-link:hover{
+    color: #ebebee;
+    transform: scale(1.1);
+    transition: .35s;
+  }
+
+
+/* OFFCANVAS ENDS HERE */
+nav{
+  background-color: var(--bgColor);
+}
+nav .logo{
+  /* display: flex; */
+  left: 0;
+  font-size: 28px;
+  color: var(--color);
+}
+.menu .nav-link{
+  align-items: center;
+  line-height: 14px;
+  color: var(--color);
+  font-size: 14px;
+}
+
+/* FIXED NAVBAR STARTS HERE */
+nav.fixed{
+  position: fixed;
+  width: 100%;
+  top: 0;
+  left: 0;
+  background: var(--bgColor);
+  transform: translateY(-100%);
+/* oprer dik theka animation hoya asar jonno hide kora holo */
+   animation-name: fixedAnimation; 
+   animation-duration: 0.65s;
+  animation-fill-mode: forwards;   
+  /* animation hoya na cole jawar jonno*/
+  /* animation-direction: alternate-reverse; */
+}
+  @keyframes fixedAnimation {
+  0%{
+    transform: translateY(-100%);
+  }
+  100%{
+    transform: translateY(0);
+ 
+  }
+}  
+nav.fixed2 {
+  transform: translateY(100%);
+  animation: fixedAnimation2 500ms forwards;
+  animation-direction: alternate-reverse;
+}
+
+@keyframes fixedAnimation2 {
+  0% {
+    transform: translateY(0%); 
+  }
+  100% {
+    transform: translateY(100%); 
+  }
+}
+/* FIXED NAVBAR ENDS HERE */
+
+/* PRELOADER $ BACK TO TOP BUTTON STARTS HERE */
+#preloader{
+  position: fixed;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  inset: 0;
+  width: 100%;
+  height: 100vh;
+  text-align: center;
+  background-color: #111116;
+}
+#preloader img{
+  width: 50%;
+  color: aliceblue;
+}
+.backToTop{
+  position: fixed;
+  bottom: 45px;
+  right: 45px;
+  background-color: rgb(44, 93, 111);
+  border: none;
+  color: white;
+  border-radius: 50%;
+  width: 35px;
+  height: 35px;
+  /* line-height: 40; */
+}
+/* PRELOADER $ BACK TO TOP BUTTON ENDS HERE */
+
+/* SECTION ONE STARTS HERE */
+
+#one img{
+  width: 675px;
+  height: 350px;
+  border-radius: 15px;
+}
+#one p{
+  font-size: 1rem;
+  color: var(--color);
+}
+#one  h1{
+  /* position: absolute; */
+  top: 20px;
+  font-size: 26px;
+  margin: 1rem 1rem;
+  color: var(--color);
+}
+/* SECTION ONE ENDS HERE */
+
+
+

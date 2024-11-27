@@ -1,0 +1,10 @@
+@media (max-width: 575px) {
+  .offcanvas{
+    width: 80%;
+  }
+}
+@media (max-width: 776px) {
+  .offcanvas{
+   width: 80%;
+  }
+}
